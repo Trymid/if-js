@@ -18,8 +18,6 @@ console.log(test);
 test = Boolean(test); // будет true
 console.log(test);
 
-
-
 let array = [2, 3, 5, 8];
 let answer = 0;
 for (let i = 1; i < array.length; i++) {
@@ -28,16 +26,15 @@ for (let i = 1; i < array.length; i++) {
 }
 console.log('Произведение элементов массива: ', answer);
 
-
-
 array = [2, 5, 8, 15, 0, 6, 20, 3];
 for (let i = 0; i < array.length; i++) {
   if (5 < array[i] && array[i] < 10) {
-    console.log('Элемент массива, который больше 5-ти, но меньше 10-ти: ', array[i]);
+    console.log(
+      'Элемент массива, который больше 5-ти, но меньше 10-ти: ',
+      array[i],
+    );
   }
 }
-
-
 
 for (let i = 0; i < array.length; i++) {
   if (array[i] % 2 === 0) {
@@ -55,44 +52,40 @@ function palindrome(word) {
 }
 console.log(palindrome('шалаш'));
 
-
-
 function min(x, y) {
-  if(x > y) {
-    console.log("Меньшее число: ", y);
+  if (x > y) {
+    console.log('Меньшее число: ', y);
   } else if (x < y) {
-    console.log("Меньшее число: ", x);
+    console.log('Меньшее число: ', x);
   } else {
-    console.log("Числа равны");
+    console.log('Числа равны');
   }
 }
 min(4, 5);
 
-
-
 function max(x, y) {
-  if(x > y) {
-    console.log("Большее число: ", x);
+  if (x > y) {
+    console.log('Большее число: ', x);
   } else if (x < y) {
-    console.log("Большее число: ", y);
+    console.log('Большее число: ', y);
   } else {
-    console.log("Числа равны");
+    console.log('Числа равны');
   }
 }
 max(6, 8);
 
-
-
 function maxt(x, y) {
-  x > y ? console.log("Большее число: ", x) : x < y ? console.log("Большее число: ", y) : console.log("Числа равны");
+  x > y
+    ? console.log('Большее число: ', x)
+    : x < y
+    ? console.log('Большее число: ', y)
+    : console.log('Числа равны');
 }
 maxt(6, 8);
 
-
-
 function generateArray() {
   const array = [];
-  for(let i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i++) {
     array[i] = Math.round(Math.random() * 100);
   }
   return array;
