@@ -121,3 +121,10 @@ function replaceZero(array) {
 const arrayTemp = generateArray();
 console.log(arrayTemp);
 replaceZero(arrayTemp);
+
+
+function sum(x, y) {
+  return x + y;
+}
+
+console.log(sum(5,2));
