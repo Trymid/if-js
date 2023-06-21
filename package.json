@@ -4,9 +4,10 @@
   "description": "",
   "main": "scripts/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "prepare": "husky install",
-    "lint": "prettier --write . && eslint scripts/main.js"
+    "lint": "prettier --write . && eslint scripts/main.js",
+    "prepublish": "npm run lint && npm test"
   },
   "repository": {
     "type": "git",
@@ -15,10 +16,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
     "@ngneat/falso": "^6.4.0",
+    "babel-jest": "^29.5.0",
     "eslint": "^8.41.0",
     "husky": "^8.0.3",
     "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
     "prettier": "2.8.8"
   }
 }

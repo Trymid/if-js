@@ -1,4 +1,4 @@
-import {sum} from "./lesson-4.js"
+import { sum } from './lesson-4.js';
 
 let user = 'John Doe';
 console.log(user);
@@ -121,7 +121,5 @@ function replaceZero(array) {
 const arrayTemp = generateArray();
 console.log(arrayTemp);
 replaceZero(arrayTemp);
-
-
 
 console.log(sum(5)(2));
