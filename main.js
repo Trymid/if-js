@@ -136,10 +136,11 @@ const sum = cur(ordinarySum);
 console.log(sum(5)(2));
 
 
+
 const COLORS = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
 const DATA = {};
 
-const BODY= document.getElementsByTagName('body');
+const BODY = document.getElementsByTagName('body');
 const PARAGRAPHS = document.querySelectorAll("[id *= 'text']");
 
 for (let i = 1; i <= PARAGRAPHS.length; i++) {
