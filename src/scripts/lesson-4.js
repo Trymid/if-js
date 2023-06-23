@@ -1,4 +1,4 @@
-export { sum, changeTextColor };
+export { sum, changeTextColor, colors, data, paragraphs, body };
 
 function ordinarySum(x, y) {
   return x + y;
@@ -13,27 +13,29 @@ function cur(f) {
 }
 const sum = cur(ordinarySum);
 
-const COLORS = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-const DATA = {};
 
-const BODY = document.getElementsByTagName('body');
-const PARAGRAPHS = document.querySelectorAll("[id *= 'text']");
 
-for (let i = 1; i <= PARAGRAPHS.length; i++) {
-  DATA['text' + i] = [-1, PARAGRAPHS[i - 1]];
+const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
+const data = {};
+
+const body = document.getElementsByTagName('body');
+const paragraphs = document.querySelectorAll("[id *= 'text']");
+
+for (let i = 1; i <= paragraphs.length; i++) {
+  data['text' + i] = [-1, paragraphs[i - 1]];
 }
 
 function changeTextColor(event) {
   const targetParagraph = event.target;
 
-  if (DATA[targetParagraph.id]) {
-    DATA[targetParagraph.id][0] += 1;
-    targetParagraph.style.color = COLORS[DATA[targetParagraph.id][0]];
-    if (DATA[targetParagraph.id][0] === COLORS.length - 1) {
-      DATA[targetParagraph.id][0] = -1;
+  if (data[targetParagraph.id]) {
+    data[targetParagraph.id][0] += 1;
+    targetParagraph.style.color = colors[data[targetParagraph.id][0]];
+    if (data[targetParagraph.id][0] === colors.length - 1) {
+      data[targetParagraph.id][0] = -1;
     }
   }
 }
-BODY[0].addEventListener('click', (event) => {
+body[0].addEventListener('click', (event) => {
   changeTextColor(event);
 });
