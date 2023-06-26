@@ -1,18 +1,19 @@
 export { sum, changeTextColor, colors, data, paragraphs, body };
 
-function ordinarySum(x, y) {
-  return x + y;
-}
 
-function cur(f) {
-  return function (x) {
-    return function (y) {
-      return f(x, y);
-    };
-  };
+const sum = (param1) => {
+  if (param1 !== undefined) {
+    return (param2) => {
+      if (param2 !== undefined) {
+        return param1 + param2;
+      } else {
+        console.log("Invalid input data")
+      }
+    }
+  } else {
+    console.log("Invalid input data")
+  }
 }
-const sum = cur(ordinarySum);
-
 
 
 const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];

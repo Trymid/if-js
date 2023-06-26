@@ -1,15 +1,14 @@
 import { sum } from '../src/scripts/lesson-4';
 
-
 test("When the 'sum' function is run", () => {
   const getRandomNumber = () => {
     return Math.trunc(Math.random() * 100000);
-  }
+  };
 
   const firstArgument = getRandomNumber();
   const secondArgument = getRandomNumber();
   const summockFunc = firstArgument + secondArgument;
-  console.log(firstArgument, secondArgument, summockFunc)
+  console.log(firstArgument, secondArgument, summockFunc);
 
   expect(firstArgument).toBeDefined();
   expect(firstArgument).not.toBeNull();
@@ -19,11 +18,9 @@ test("When the 'sum' function is run", () => {
 });
 
 test("The function changes the color of the 'p' element in accordance with the given order from the array of colors", () => {
-
   document.body.innerHTML = `<p id="text1">Text 1</p>
                              <p id="text2">Text 2</p>
-                             <p id="text3">Text 3</p>`
-
+                             <p id="text3">Text 3</p>`;
 
   const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
   const data = {};
@@ -73,4 +70,4 @@ test("The function changes the color of the 'p' element in accordance with the g
   expect(paragraphs[1].style.color).toBe('cyan');
   expect(paragraphs[2].style.color).toBe('magenta');
   expect(mockFunc).toHaveBeenCalledTimes(9);
-})
+});
