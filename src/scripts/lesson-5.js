@@ -1,8 +1,11 @@
-export { correctDate, date };
+export { correctDate, searchForMatches };
 
 const date = '2020-11-26';
 
 function correctDate(date) {
+  if (!date || !(typeof date === 'string')) {
+    return 0;
+  }
   const temp = date.match(/\d+/gi);
   return `${temp[2]}.${temp[1]}.${temp[0]}`;
 }
@@ -55,26 +58,29 @@ const DATA = [
 const testString = 'germ HoteL, rusSia,Bali ';
 
 function searchForMatches(str) {
+  if (!str || !(typeof str === 'string')) {
+    return [];
+  }
   const request = str.toLowerCase().match(/([\w])+/gi);
   console.log(request);
-  const result = [];
 
-  for (const item of DATA) {
-    for (const key in item) {
-      let temp = 0;
+  return DATA.reduce((acc, object) => {
+    let temp = '';
+
+    for (const key in object) {
       for (const word of request) {
-        temp = item[key].toLowerCase().match(word);
-        if (temp) {
+        if (object[key].toLowerCase().match(word)) {
+          temp = `${object.country}, ${object.city}, ${object.hotel}`;
+          acc.push(temp);
           break;
         }
       }
       if (temp) {
-        result.push(`${item.country}, ${item.city}, ${item.hotel}`);
         break;
       }
     }
-  }
-  return result;
+    return acc;
+  }, []);
 }
 
 console.log(searchForMatches(testString));
