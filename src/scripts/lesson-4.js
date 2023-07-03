@@ -1,20 +1,18 @@
 export { sum, changeTextColor, colors, data, paragraphs, body };
 
-
 const sum = (param1) => {
   if (param1 !== undefined) {
     return (param2) => {
       if (param2 !== undefined) {
         return param1 + param2;
       } else {
-        console.log("Invalid input data")
+        console.log('Invalid input data');
       }
-    }
+    };
   } else {
-    console.log("Invalid input data")
+    console.log('Invalid input data');
   }
-}
-
+};
 
 const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
 const data = {};

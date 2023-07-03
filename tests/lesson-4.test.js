@@ -8,7 +8,7 @@ test("When the 'sum' function is run", () => {
   const firstArgument = getRandomNumber();
   const secondArgument = getRandomNumber();
   const summockFunc = firstArgument + secondArgument;
-  console.log(firstArgument, secondArgument, summockFunc);
+  // console.log(firstArgument, secondArgument, summockFunc);
 
   expect(firstArgument).toBeDefined();
   expect(firstArgument).not.toBeNull();
