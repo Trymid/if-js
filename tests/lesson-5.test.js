@@ -1,12 +1,12 @@
 import { correctDate, searchForMatches } from '../src/scripts/lesson-5';
 
 describe("Function change date format from 'yy/mm/dd' to 'dd/mm/yy'", () => {
-  test("should display the correct information with the correct input", () => {
+  test('should display the correct information with the correct input', () => {
     const date = '2020-11-26';
     expect(correctDate(date)).toBe('26.11.2020');
   });
 
-  test("should return 0", () => {
+  test('should return 0', () => {
     const input = '';
     const input1 = false;
     const input2 = null;
@@ -23,11 +23,9 @@ describe("Function change date format from 'yy/mm/dd' to 'dd/mm/yy'", () => {
     expect(correctDate(input5)).toBe(output);
     expect(correctDate(input6)).toBe(output);
   });
-})
+});
 
-
-
-describe("Finds all words from the query and displays an array with the country, city, hotel in a row", () => {
+describe('Finds all words from the query and displays an array with the country, city, hotel in a row', () => {
   const DATA = [
     {
       country: 'Russia',
@@ -71,20 +69,20 @@ describe("Finds all words from the query and displays an array with the country,
     },
   ];
 
-  test("should output correct data", () => {
+  test('should output correct data', () => {
     const input = 'germ HoteL, rusSia,Bali ';
     const output = [
       'Russia, Saint Petersburg, Hotel Leopold',
       'Germany, Berlin, Hostel Friendship',
       'Indonesia, Bali, Ubud Bali Resort&SPA',
       'Marocco, Ourika, Rokoko Hotel',
-      'Germany, Berlin, Hotel Rehberge Berlin Mitte'
-    ]
+      'Germany, Berlin, Hotel Rehberge Berlin Mitte',
+    ];
 
     expect(searchForMatches(input)).toEqual(output);
   });
 
-  test("should output empty array", () => {
+  test('should output empty array', () => {
     const input = '';
     const input1 = false;
     const input2 = null;
@@ -102,4 +100,3 @@ describe("Finds all words from the query and displays an array with the country,
     expect(searchForMatches(input6)).toEqual(output);
   });
 });
-
