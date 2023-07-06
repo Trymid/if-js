@@ -1,4 +1,5 @@
-import { correctDate, searchForMatches } from '../src/scripts/lesson-5';
+import { correctDate, searchForMatches} from '../src/scripts/lesson-5';
+
 
 describe("Function change date format from 'yy/mm/dd' to 'dd/mm/yy'", () => {
   test('should display the correct information with the correct input', () => {
@@ -26,49 +27,7 @@ describe("Function change date format from 'yy/mm/dd' to 'dd/mm/yy'", () => {
 });
 
 describe('Finds all words from the query and displays an array with the country, city, hotel in a row', () => {
-  const DATA = [
-    {
-      country: 'Russia',
-      city: 'Saint Petersburg',
-      hotel: 'Hotel Leopold',
-    },
-    {
-      country: 'Spain',
-      city: 'Santa Cruz de Tenerife',
-      hotel: 'Apartment Sunshine',
-    },
-    {
-      country: 'Slowakia',
-      city: 'Vysokie Tatry',
-      hotel: 'Villa Kunerad',
-    },
-    {
-      country: 'Germany',
-      city: 'Berlin',
-      hotel: 'Hostel Friendship',
-    },
-    {
-      country: 'Indonesia',
-      city: 'Bali',
-      hotel: 'Ubud Bali Resort&SPA',
-    },
-    {
-      country: 'Netherlands',
-      city: 'Rotterdam',
-      hotel: 'King Kong Hostel',
-    },
-    {
-      country: 'Marocco',
-      city: 'Ourika',
-      hotel: 'Rokoko Hotel',
-    },
-    {
-      country: 'Germany',
-      city: 'Berlin',
-      hotel: 'Hotel Rehberge Berlin Mitte',
-    },
-  ];
-
+  // const DATA = data;
   test('should output correct data', () => {
     const input = 'germ HoteL, rusSia,Bali ';
     const output = [
