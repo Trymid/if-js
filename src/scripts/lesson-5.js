@@ -1,5 +1,5 @@
 export { correctDate, searchForMatches };
-import { data } from "../constants/constants.js";
+import { data } from '../constants/constants.js';
 
 const date = '2020-11-26';
 
@@ -12,8 +12,6 @@ function correctDate(date) {
 }
 
 console.log(correctDate(date));
-
-
 
 const testString = 'germ HoteL, rusSia,Bali ';
 

@@ -1,5 +1,4 @@
-import { correctDate, searchForMatches} from '../src/scripts/lesson-5';
-
+import { correctDate, searchForMatches } from '../src/scripts/lesson-5';
 
 describe("Function change date format from 'yy/mm/dd' to 'dd/mm/yy'", () => {
   test('should display the correct information with the correct input', () => {
