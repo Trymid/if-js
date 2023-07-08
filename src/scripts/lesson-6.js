@@ -6,8 +6,6 @@ function palindrome(str) {
 }
 console.log(palindrome('шалаш'));
 
-
-
 const testString = 'germ HoteL, rusSia,Bali ';
 function searchForMatches(str) {
   if (!str || !(typeof str === 'string')) {
@@ -28,7 +26,6 @@ function searchForMatches(str) {
 }
 console.log(searchForMatches(testString));
 
-
 function getCities(array) {
   if (!(Array.isArray(array) && array.length > 0)) {
     return {};
@@ -43,8 +40,6 @@ function getCities(array) {
   }, {});
 }
 console.log(getCities(hotels));
-
-
 
 const daysInMonth = 30;
 const daysInWeek = 7;
