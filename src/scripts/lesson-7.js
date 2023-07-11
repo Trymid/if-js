@@ -1,17 +1,35 @@
-import { obj1, obj2, obj3 } from '../constants/constants';
-export { deepEqual };
+import {obj1, obj2, obj3} from '../constants/constants';
 
-function deepEqual(object1, object2) {
-  const temp1 = JSON.stringify(object1).slice(1, -1).split('').sort().join('');
-  const temp2 = JSON.stringify(object2).slice(1, -1).split('').sort().join('');
-  return temp1 === temp2;
-}
+export {deepEqual, getCalendarMonth};
 
-console.log(deepEqual(obj1, obj3));
+const deepEqual = (object1, object2) => {
+  const foundObjects = [object1, object2];
+  const result = [];
+  for (let i = 0; i < foundObjects.length; i++) {
+    result[i] = [];
+
+    const nesting2 = item => {
+      const keysArray = Object.keys(item).sort();
+      keysArray.forEach((key) => {
+        if (typeof item[key] === 'object' && item[key]) {
+          const temp = JSON.stringify(item[key]).split('').sort().join('');
+          result[i].push([key, temp]);
+          nesting2(item[key]);
+        } else {
+          result[i].push([key, item[key]]);
+        }
+      });
+    };
+    nesting2(foundObjects[i]);
+  }
+  return String(result[0]) === String(result[1]);
+};
+console.log(deepEqual(obj1, obj2));
+
 
 const daysInMonth = 30;
 const daysInWeek = 7;
-const dayOfWeek = 4;
+const dayOfWeek = 4; // starts from 0;
 const range = [29, 15];
 const calendarMonth = getCalendarMonth(
   daysInMonth,
@@ -36,7 +54,7 @@ function getCalendarMonth(
 
   const [checkInDate, checkOutDate] = rangeSelectedDays;
   const lastDaysOfArray = daysInWeek - ((daysInMonth + dayOfWeek) % daysInWeek);
-  const daysAmount = dayOfWeek + daysInMonth + lastDaysOfArray; // 35
+  const daysAmount = dayOfWeek + daysInMonth + lastDaysOfArray;
 
   const startDate = ((daysInWeek, dayOfWeek) => {
     if (dayOfWeek === 0) {
@@ -91,4 +109,5 @@ function getCalendarMonth(
   }
   return result;
 }
+
 console.log(calendarMonth);

@@ -239,9 +239,9 @@ const obj4 = {
 };
 
 const obj5 = {
-  // a: 5,
-  b: 'hello',
-  c: 'hello again',
+  c: 'hello',
+  b: 5,
+  a: 'hello again',
 };
 
 const obj6 = {
