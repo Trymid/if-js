@@ -1,4 +1,4 @@
-export { data, hotels };
+export { data, hotels, obj1, obj2, obj3, obj4, obj5, obj6, obj7 };
 
 const data = [
   {
@@ -200,3 +200,78 @@ const hotels = [
     country: 'Germany',
   },
 ];
+
+const obj1 = {
+  a: 'a',
+  b: {
+    a: 'a',
+    b: 'b',
+    c: {
+      a: 1,
+    },
+  },
+};
+const obj2 = {
+  b: {
+    c: {
+      a: 1,
+    },
+    b: 'b',
+    a: 'a',
+  },
+  a: 'a',
+};
+const obj3 = {
+  a: {
+    c: {
+      a: 'a',
+    },
+    b: 'b',
+    a: 'a',
+  },
+  b: 'b',
+};
+
+const obj4 = {
+  a: 5,
+  b: 'hello',
+  c: 'hello again',
+};
+
+const obj5 = {
+  c: 'hello',
+  b: 5,
+  a: 'hello again',
+};
+
+const obj6 = {
+  a: 5,
+  b: 'hello',
+  c: {
+    a: 'hello again',
+    b: {
+      a: 'another object',
+      c: {
+        a: {
+          a: 'yep',
+        },
+      },
+    },
+  },
+};
+
+const obj7 = {
+  a: {
+    a: 'hello again',
+    b: {
+      a: 'another object',
+      c: {
+        a: {
+          a: 'yep',
+        },
+      },
+    },
+  },
+  c: 'hello',
+  b: 5,
+};

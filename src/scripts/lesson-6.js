@@ -1,21 +1,17 @@
 export { palindrome, searchForMatches, getCities };
 import { data, hotels } from '../constants/constants.js';
 
-
 function palindrome(str) {
   return str === str.split('').reverse().join('');
 }
-
 console.log(palindrome('шалаш'));
 
 const testString = 'germ HoteL, rusSia,Bali ';
-
 function searchForMatches(str) {
   if (!str || !(typeof str === 'string')) {
     return [];
   }
   const request = str.toLowerCase().match(/([\w])+/gi);
-  console.log(request);
 
   return data.reduce((acc, object) => {
     const values = Object.values(object).join(' ').toLowerCase();
@@ -28,12 +24,9 @@ function searchForMatches(str) {
     return acc;
   }, []);
 }
-
 console.log(searchForMatches(testString));
 
-
 function getCities(array) {
-  console.log(!(Array.isArray(array) && array.length > 0))
   if (!(Array.isArray(array) && array.length > 0)) {
     return {};
   }
@@ -55,10 +48,10 @@ const calendarMonth = getCalendarMonth(daysInMonth, daysInWeek, dayOfWeek);
 
 function getCalendarMonth(daysInMonth, daysInWeek, dayOfWeek) {
   if (dayOfWeek < 0 || dayOfWeek >= daysInWeek) {
-    return "Incorrect number of days in week"
+    return 'Incorrect number of days in week';
   }
 
-  const lastDaysOfArray = daysInWeek - (daysInMonth + dayOfWeek) % daysInWeek;
+  const lastDaysOfArray = daysInWeek - ((daysInMonth + dayOfWeek) % daysInWeek);
   const daysAmount = dayOfWeek + daysInMonth + lastDaysOfArray; // 35
 
   const startDate = ((daysInWeek, dayOfWeek) => {
@@ -66,10 +59,7 @@ function getCalendarMonth(daysInMonth, daysInWeek, dayOfWeek) {
       return 1;
     }
     return daysInMonth - (dayOfWeek - 1);
-  })(daysInWeek, dayOfWeek)
-
-  console.log(daysAmount);
-  console.log(startDate);
+  })(daysInWeek, dayOfWeek);
 
   const result = [];
   const tempArray = [];
@@ -86,7 +76,7 @@ function getCalendarMonth(daysInMonth, daysInWeek, dayOfWeek) {
     tempArray.push(i + 1);
   }
 
-  console.log(tempArray)
+  console.log(tempArray);
   let anotherTempArray = [];
 
   for (let i = 1; i < daysAmount + 1; i++) {
@@ -98,5 +88,4 @@ function getCalendarMonth(daysInMonth, daysInWeek, dayOfWeek) {
   }
   return result;
 }
-
 console.log(calendarMonth);
