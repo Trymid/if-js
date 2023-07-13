@@ -1,6 +1,6 @@
-import {obj1, obj2, obj3} from '../constants/constants';
+import { obj1, obj2, obj3 } from '../constants/constants';
 
-export {deepEqual, getCalendarMonth};
+export { deepEqual, getCalendarMonth };
 
 const deepEqual = (object1, object2) => {
   const foundObjects = [object1, object2];
@@ -8,7 +8,7 @@ const deepEqual = (object1, object2) => {
   for (let i = 0; i < foundObjects.length; i++) {
     result[i] = [];
 
-    const nesting2 = item => {
+    const nesting2 = (item) => {
       const keysArray = Object.keys(item).sort();
       keysArray.forEach((key) => {
         if (typeof item[key] === 'object' && item[key]) {
@@ -25,7 +25,6 @@ const deepEqual = (object1, object2) => {
   return String(result[0]) === String(result[1]);
 };
 console.log(deepEqual(obj1, obj2));
-
 
 const daysInMonth = 30;
 const daysInWeek = 7;
